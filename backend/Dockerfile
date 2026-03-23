@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-dev \
     libpng-dev \
     libjpeg-dev \
+    intltool \
     && rm -rf /var/lib/apt/lists/*
 
 RUN git clone --depth 1 https://github.com/autotrace/autotrace.git /tmp/autotrace \
