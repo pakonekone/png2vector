@@ -1,0 +1,17 @@
+{
+  "name": "png2vector",
+  "version": "1.0.0",
+  "description": "Herramienta de conversión PNG a SVG editable en Figma",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && if [ -x venv/bin/python ]; then venv/bin/python -m uvicorn main:app --reload --port 8002; else python3 -m uvicorn main:app --reload --port 8002; fi",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install-all": "cd backend && if [ ! -d venv ]; then python3 -m venv venv; fi && venv/bin/pip install -r requirements.txt && cd ../frontend && npm install"
+  },
+  "keywords": ["png", "svg", "vector", "figma", "converter"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

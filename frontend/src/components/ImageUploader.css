@@ -1,0 +1,103 @@
+.image-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dropzone {
+  border: 2px dashed #555;
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dropzone:hover:not(.disabled) {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.dropzone.active {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.02);
+}
+
+.dropzone.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.upload-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  color: #888;
+}
+
+.upload-prompt svg {
+  color: #667eea;
+  opacity: 0.6;
+}
+
+.upload-prompt .main-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.upload-prompt .sub-text {
+  font-size: 1rem;
+  color: #888;
+}
+
+.upload-prompt .format-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.file-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.file-info {
+  text-align: center;
+}
+
+.filename {
+  font-weight: 500;
+  color: #ccc;
+  word-break: break-all;
+}
+
+.filesize {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+.clear-button {
+  width: 100%;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: #ff4d4d;
+}
+
+.clear-button:hover {
+  background: rgba(255, 77, 77, 0.2);
+  border-color: #ff4d4d;
+}
