@@ -4,7 +4,6 @@ services:
     name: png2vector-api
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
-    plan: free
     envVars:
       - key: ALLOWED_ORIGINS
         value: https://png2vector.onrender.com
@@ -15,7 +14,6 @@ services:
     runtime: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
-    plan: free
     envVars:
       - key: VITE_API_URL
         value: https://png2vector-api.onrender.com
