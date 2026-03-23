@@ -4,6 +4,7 @@ services:
     name: png2vector-api
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
     envVars:
       - key: ALLOWED_ORIGINS
         value: https://png2vector.onrender.com
