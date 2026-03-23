@@ -327,12 +327,18 @@ def image_to_svg_centerline(
         cmd.append(bmp_path)
 
         # Run autotrace
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            check=False
-        )
+        try:
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                check=False
+            )
+        except FileNotFoundError:
+            raise HTTPException(
+                status_code=501,
+                detail="Organic stroke mode requires autotrace, which is not installed on this server. Use 'geometric' stroke engine instead."
+            )
 
         if result.returncode != 0:
             raise Exception(f"Autotrace failed: {result.stderr}")
